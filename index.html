@@ -10,12 +10,28 @@
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
     <title>Better ESS</title>
-    <script type="module" crossorigin src="./assets/index-D0JUAysM.js"></script>
+    <style>
+      /* Critical bootstrap styles — verhindern FOUC vor Lade-Abschluss von style.css.
+         Sobald style.css geladen ist (importiert via main.js), übernehmen die echten Tokens. */
+      html, body {
+        margin: 0;
+        background: #0a0d1a;
+        color: #e5e7eb;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+        min-height: 100vh;
+      }
+      @media (prefers-color-scheme: light) {
+        html, body { background: #f7f5ee; color: #1a1a1a; }
+      }
+      /* App initial unsichtbar — sichtbar wenn style.css geladen ist (siehe style.css :root[data-css-ready]). */
+      #app { opacity: 0; }
+    </style>
+    <script type="module" crossorigin src="./assets/index-CI0Bcxsd.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/dexie-BODkcwel.js">
     <link rel="modulepreload" crossorigin href="./assets/datefns-VEit7B1-.js">
     <link rel="modulepreload" crossorigin href="./assets/chartjs-CRgZvhTJ.js">
     <link rel="modulepreload" crossorigin href="./assets/pdfjs-BDGsuRSB.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BbWCPoad.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-C2lCjx1r.css">
   </head>
   <body>
     <div id="bg-decoration" aria-hidden="true">
@@ -45,8 +61,7 @@
         </div>
         <nav class="nav">
           <a href="#/" data-route="/" class="nav-item"><span class="nav-icon icon-sprite icon-dashboard"></span>Dashboard</a>
-          <a href="#/monat" data-route="/monat" class="nav-item"><span class="nav-icon icon-sprite icon-monat"></span>Monate</a>
-          <a href="#/woche" data-route="/woche" class="nav-item"><span class="nav-icon icon-sprite icon-woche"></span>Wochen</a>
+          <a href="#/kalender" data-route="/kalender" class="nav-item"><span class="nav-icon icon-sprite icon-monat"></span>Kalender</a>
           <a href="#/analytics" data-route="/analytics" class="nav-item"><span class="nav-icon icon-sprite icon-analytics"></span>Analytics</a>
           <a href="#/profil" data-route="/profil" class="nav-item"><span class="nav-icon icon-sprite icon-profil"></span>Profil</a>
           <a href="#/daten" data-route="/daten" class="nav-item"><span class="nav-icon icon-sprite icon-daten"></span>Daten</a>
@@ -61,6 +76,6 @@
         </div>
       </main>
     </div>
-    <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+    <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
   </body>
 </html>
