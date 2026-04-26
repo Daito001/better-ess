@@ -171,7 +171,7 @@ Vielen Dank!`}};function Ne(e,t){const a=De[e];return a?{...a,...t??{}}:null}fun
         <div class="alert-title">${He(e.titel)}</div>
         <p style="margin: 4px 0; font-size: 13px;">${He(e.beschreibung)}</p>
         <div class="alert-actions">
-          ${s?`<a href="${Je(s)}" class="btn primary sm mail-outlook-btn"><img src="outlook-logo.png" alt="" class="outlook-logo" />Mail schreiben</a>`:""}
+          ${s?`<a href="${Je(s)}" class="btn-mail-medium"><img src="outlook-logo.png" alt="" class="outlook-logo-medium" />E-Mail</a>`:""}
           ${e.datum&&e.datum.length===10?`<a href="#/tag/${e.datum}" class="btn sm">Tag ansehen</a>`:""}
           <button class="btn ghost sm btn-dismiss" data-datum="${Je(e.datum)}" data-typ="${Je(e.typ)}">Ausblenden</button>
         </div>
