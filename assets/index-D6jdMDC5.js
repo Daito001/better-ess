@@ -127,7 +127,7 @@ Vielen Dank!`}};function Pe(e,t){const n=Se[e];return n?{...n,...t??{}}:null}fun
       </div>
       <div style="flex: 1; min-width: 400px; display: flex; flex-direction: column;">
         <div class="card-split" style="margin-bottom: 12px; align-items: center;">
-          <h3 style="margin: 0;">Verlauf</h3>
+          <h3 style="margin: 0;">Saldo-Verlauf</h3>
           <div class="segmented" id="zeitraum-picker">
             ${u.map(S=>`<button type="button" data-key="${S.key}" class="${h===S.key?"active":""}">${S.label}</button>`).join("")}
           </div>
