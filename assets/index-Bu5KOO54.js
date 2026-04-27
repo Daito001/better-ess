@@ -417,7 +417,6 @@ Wenn du fortfährst, werden alle alten Tagesdaten gelöscht und durch die neuen 
 
     <form id="profil-form" class="grid cols-2" style="gap: 24px;">
       <div class="card">
-        <h2>Alter</h2>
         <label class="switch-row">
           <span class="switch">
             <input type="checkbox" name="ueber18" id="ueber18-switch" ${t.ueber18?"checked":""} />
