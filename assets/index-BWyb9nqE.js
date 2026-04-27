@@ -429,7 +429,7 @@ Wenn du fortfährst, werden alle alten Tagesdaten gelöscht und durch die neuen 
         <label class="switch-row" style="margin-top: 16px;">
           <span class="switch-row-label">
             <strong>Azubi Features</strong>
-            <p class="hint">Fahrgelderstattung und Berufsschul-Erkennung. ${a?`Aus deinem PDF erkannt: Mitarbeiterkreis <code>${Xi(a)}</code> → Standardmäßig <strong>${n?"an":"aus"}</strong>.`:"Wird automatisch aus dem Mitarbeiterkreis im Zeitnachweis abgeleitet (AZ = Azubi)."}</p>
+            <p class="hint">Fahrgelderstattung und Berufsschul-Erkennung. ${a?`Aus deinem PDF erkannt: Mitarbeiterkreis <code>${Xi(a)}</code> → Standardmäßig <strong>${String(a).trim().toUpperCase()==="AZ"?"an":"aus"}</strong>.`:"Wird automatisch aus dem Mitarbeiterkreis im Zeitnachweis abgeleitet (AZ = Azubi)."}</p>
           </span>
           <span class="switch">
             <input type="checkbox" id="azubi-switch" ${n?"checked":""} />
